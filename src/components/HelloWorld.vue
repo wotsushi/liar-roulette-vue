@@ -10,21 +10,26 @@
       <v-ons-toolbar>
         <div class="center">Title</div>
       </v-ons-toolbar>
-
       <p style="text-align: center">
         <v-ons-button @click="$ons.notification.alert('Hello World!')">
           Click me!
         </v-ons-button>
       </p>
+      <roulette></roulette>
     </v-ons-page>
   </div>
 </template>
 
 <script>
+import Roulette from './Roulette.vue'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    Roulette
   }
 }
 </script>
