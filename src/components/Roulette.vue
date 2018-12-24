@@ -1,36 +1,23 @@
+<template>
+  <div style="animation: rotate-anime 3s linear infinite">
+    <wheel/>
+  </div>
+
+</template>
+
 <script>
-import { Pie } from 'vue-chartjs'
+import Wheel from './Wheel.vue'
 
 export default {
-  extends: Pie,
-  data: () => ({
-    chartdata: {
-      labels: ['1', '5', '10', '50'],
-      datasets: [
-        {
-          data: [1, 2, 3, 4],
-          backgroundColor: [
-            'rgba(255, 100, 130, 0.2)',
-            'rgba(100, 130, 255, 0.2)',
-            'rgba(130, 255, 100, 0.2)',
-            'rgba(230, 210, 85, 0.2)'
-          ]
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      legend: {
-        display: false
-      }
-    }
-  }),
-
-  mounted () {
-    this.renderChart(this.chartdata, this.options)
+  components: {
+    Wheel
   }
 }
 </script>
 
 <style>
+@keyframes rotate-anime {
+  0%  {transform: rotate(0);}
+  100%  {transform: rotate(360deg);}
+}
 </style>
